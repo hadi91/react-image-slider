@@ -11,8 +11,7 @@ class Carousel extends React.Component{
 
     this.state = {
       slideCount: 0,
-      key: 1,
-      transition: ''
+      key: 1
     }
   }
 
@@ -20,14 +19,12 @@ class Carousel extends React.Component{
     if(this.state.slideCount === 2){
       this.setState({
         slideCount: 0,
-        key: this.state.key + 1,
-        transition: 'slide'
+        key: this.state.key + 1
       });
     } else {
       this.setState({
         slideCount: this.state.slideCount + 1,
-        key: this.state.key + 1,
-        transition: 'slide'
+        key: this.state.key + 1
       });
     }
   }
@@ -36,14 +33,12 @@ class Carousel extends React.Component{
     if (this.state.slideCount === 0){
       this.setState({
         slideCount: 2,
-        key: this.state.key - 1,
-        transition: 'leave'
+        key: this.state.key - 1
       });
     } else {
       this.setState({
         slideCount: this.state.slideCount - 1,
-        key: this.state.key - 1,
-        transition: 'leave'
+        key: this.state.key - 1
       });
     }
   }
@@ -53,15 +48,16 @@ class Carousel extends React.Component{
 
     return (
       <div className="carousel">
-        <div className="image-slider">
-          <button id="previous" onClick={this.previousSlide.bind(this)} className="arrow left"></button>
+        <div className="carousel-viewport">
+          <button className="arrow left" onClick={this.previousSlide.bind(this)}></button>
           <ReactCSSTransitionGroup
-          transitionName={this.state.transition}
+          transitionName= 'fade'
           transitionEnterTimeout={1000}
-          transitionLeaveTimeout={1000}>
-          <img key={this.state.key} src={imageList[this.state.slideCount]} alt=""/>
+          transitionLeaveTimeout={1000}
+          >
+          <img key={this.state.key} src={imageList[this.state.slideCount]} alt="images from carousel"/>
           </ReactCSSTransitionGroup>
-          <button id="next" onClick={this.nextSlide.bind(this)} className="arrow right"></button>
+          <button className="arrow right" onClick={this.nextSlide.bind(this)}></button>
         </div>
       </div>
 

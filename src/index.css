@@ -8,23 +8,21 @@ body {
   width: 450px;
   height: 280px;
   overflow: hidden;
-  z-index: 2;
   margin: 150px auto;
   background-color: grey;
   box-shadow: 10px 10px 50px 10px grey;
 }
-.image-slider {
+.carousel-viewport {
   width: 450px;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.image-slider img {
+.carousel-viewport img {
   padding: 0;
   margin: 0;
   width: 450px;
   height: 280px;
-  z-index: 1;
 }
 
 /*-- slider-button --*/
@@ -35,7 +33,7 @@ body {
   display: inline-block;
   padding: 7px;
   background: none;
-  opacity: 0.1;
+  opacity: 0.3;
 }
 
 .arrow:hover {
@@ -61,75 +59,21 @@ body {
 
 /*-- React CSS Transition Group --*/
 
-.slide-enter {
-  opacity: 0;
+.fade-enter {
+  opacity: 0.2;
 }
 
-.slide-enter-active {
+.fade-enter-active {
   opacity: 1;
   transition: all 1000ms ease-in;
 }
 
-.slide-leave {
+.fade-leave {
   opacity: 1;
 }
-.slide-leave-active {
+/*.slide-leave-active {
   opacity: 0;
   transition: all 1000ms ease-out;
-}
-
-.leave-enter {
-  opacity: 0;
-}
-
-.leave-enter-active {
-  opacity: 1;
-  transition: all 1000ms ease-in;
-}
-
-.leave-leave {
-  opacity: 1;
-}
-
-.leave-leave-active {
-  opacity: 0;
-  transition: all 1000ms ease-out;
-}
+}*/
 
 /* --------------------- */
-
-
-
-@keyframes slide-in {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-@keyframes slide-out {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes leave-in {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-@keyframes leave-out {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
