@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.carousel {
+  width: 450px;
+  height: 280px;
+  overflow: hidden;
+  z-index: 2;
+  margin: 150px auto;
+  background-color: grey;
+  box-shadow: 10px 10px 50px 10px grey;
+}
+.image-slider {
+  width: 450px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.image-slider img {
+  padding: 0;
+  margin: 0;
+  width: 450px;
+  height: 280px;
+  z-index: 1;
+}
+
+/*-- slider-button --*/
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 7px;
+  background: none;
+  opacity: 0.1;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+
+.right {
+  transform: rotate(-45deg);
+  position: absolute;
+  margin-top: 130px;
+  margin-left: -24px;
+}
+
+.left {
+  transform: rotate(135deg);
+  position: absolute;
+  margin-top: 130px;
+  margin-left: 7px;
+}
+
+/* -------------- */
+
+/*-- React CSS Transition Group --*/
+
+.slide-enter {
+  opacity: 0;
+}
+
+.slide-enter-active {
+  opacity: 1;
+  transition: all 1000ms ease-in;
+}
+
+.slide-leave {
+  opacity: 1;
+}
+.slide-leave-active {
+  opacity: 0;
+  transition: all 1000ms ease-out;
+}
+
+.leave-enter {
+  opacity: 0;
+}
+
+.leave-enter-active {
+  opacity: 1;
+  transition: all 1000ms ease-in;
+}
+
+.leave-leave {
+  opacity: 1;
+}
+
+.leave-leave-active {
+  opacity: 0;
+  transition: all 1000ms ease-out;
+}
+
+/* --------------------- */
+
+
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes slide-out {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes leave-in {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes leave-out {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
