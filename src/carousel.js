@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import image1 from './images/watch1.jpg';
 import image2 from './images/watch2.jpg';
